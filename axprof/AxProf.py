@@ -4,7 +4,7 @@ import numpy as np
 import os
 import sys
 from scipy.optimize import curve_fit
-from scipy.stats import chisquare, binom_test, combine_pvalues, ttest_1samp, wilcoxon, norm
+from scipy.stats import chisquare, binomtest, combine_pvalues, ttest_1samp, wilcoxon, norm
 import itertools
 import time
 import queue
@@ -43,14 +43,14 @@ def checkDist(observed, expected, DDoF, pvalue=0.05):
 def checkFreq(observed, trials, expProb, pvalue=0.05, alternative='two-sided'):
   if observed > 0 and expProb == 0:
     return False
-  p = binom_test(observed, trials, expProb, alternative)
+  p = binomtest(observed, trials, expProb, alternative).pvalue
   return p >= pvalue
 
 
 def binomialTest(observed, trials, expProb, alternative='two-sided'):
   if observed > 0 and expProb == 0:
     return 0
-  return binom_test(observed, trials, expProb, alternative)
+  return binomtest(observed, trials, expProb, alternative).pvalue
 
 
 def fitFuncToData(data, func, funcParams, paramNames):
