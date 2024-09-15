@@ -338,10 +338,8 @@ develop = false
 numpy = ">=1.3.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/Alan-Chen99/minepy.git"
-reference = "HEAD"
-resolved_reference = "8fa86ea505bfd9b650e9388d7f3226c77eabf314"
+type = "directory"
+url = "../minepy"
 
 [[package]]
 name = "numpy"
@@ -605,4 +603,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11"
-content-hash = "ba556271ce9a02bc3b095ee849cf3f9b9d7c129b5ca50cf2d3ab3705db3a00a4"
+content-hash = "7e7c9fd45507661f3b02acfe8eb3bd5f80d5b666d34cf5fd4fc4703d1133b9c6"
