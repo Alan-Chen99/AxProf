@@ -3,7 +3,7 @@
 import numpy as np
 import random
 import math
-from AxProfUtil import writeDataToFile
+from .AxProfUtil import writeDataToFile
 import scipy
 
 

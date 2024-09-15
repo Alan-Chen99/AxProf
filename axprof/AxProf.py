@@ -13,13 +13,13 @@ import subprocess
 from minepy import MINE
 import random
 
-from AxProfUtil import extractConfigsFromDict
-from AxProfUtil import extractJobsFromConfigs
-from AxProfUtil import extractAllConfigs
-from AxProfUtil import writeDataToFile
-from AxProfUtil import dumpObtainedData
-from AxProfVis import visualizeOutput
-from AxProfGenerators import * #nothing but generators
+from .AxProfUtil import extractConfigsFromDict
+from .AxProfUtil import extractJobsFromConfigs
+from .AxProfUtil import extractAllConfigs
+from .AxProfUtil import writeDataToFile
+from .AxProfUtil import dumpObtainedData
+from .AxProfVis import visualizeOutput
+from .AxProfGenerators import * #nothing but generators
 
 defaultInputFileName = '_AxProf_input.txt'
 defaultOutputFileName = '_AxProf_output.txt'

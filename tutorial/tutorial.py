@@ -26,8 +26,7 @@ from pathlib import Path
 # better way would be to add the AxProf directory to the PATH environment
 # variable of your system.
 
-sys.path.append(str(Path(__file__).parent.parent / "axprof"))
-import AxProf
+from axprof import AxProf
 
 # ==============================================================================
 
