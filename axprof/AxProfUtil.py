@@ -3,12 +3,18 @@
 import numpy as np
 import itertools
 from collections import namedtuple
+from pathlib import Path
+
+def resolve_write_path(fileName):
+  filePath = (Path.cwd() / fileName).resolve()
+  filePath.parent.mkdir(parents=True, exist_ok=True)
+  return filePath
 
 # Write a list of real numbers, lists, or matrices to a file
 # Used to write the inputs to a file
 def writeDataToFile(data, fileName):
   dummyMatrix = np.array([[0]])
-  dataFile = open(fileName, 'w+')
+  dataFile = open(resolve_write_path(fileName), 'w+')
   for datum in data:
     if type(datum) == list:
       print(*datum, file=dataFile)
@@ -54,7 +60,7 @@ def extractJobsFromConfigs(configList, inputs, runs):
 # Write time or space data for each configuration to a file
 def dumpObtainedData(data,fileName,paramNames,dataName=''):
   numParams = len(paramNames)
-  outputFile = open(fileName,'w')
+  outputFile = open(resolve_write_path(fileName),'w')
   for i in range(numParams):
     outputFile.write(paramNames[i]+'\t')
   outputFile.write(dataName+'\n')
