@@ -3,6 +3,7 @@ name = "axprof"
 description = ""
 authors = []
 version = "0.1"
+include = ["**/*"]
 
 [tool.poetry.dependencies]
 python = ">=3.11"
@@ -11,3 +12,11 @@ numpy = "^2.1.1"
 scipy = "^1.14.1"
 matplotlib = "^3.9.2"
 minepy = { git = "https://github.com/Alan-Chen99/minepy.git" }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.build]
+generate-setup-file = false
+script = "build.py"
